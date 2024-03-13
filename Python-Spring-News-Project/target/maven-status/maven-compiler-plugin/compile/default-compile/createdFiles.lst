@@ -1,0 +1,8 @@
+com/tests/demo/utility/Crawler.class
+com/tests/demo/entity/NewsEntity.class
+com/tests/demo/controller/NewsEntityController.class
+com/tests/demo/service/NewsEntityService.class
+com/tests/demo/repository/NewsEntityRepository.class
+com/tests/demo/repository/NewsEntityRepositoryInterface.class
+com/tests/demo/service/NewsEntityServiceImpl.class
+com/tests/demo/DemoApplication.class
