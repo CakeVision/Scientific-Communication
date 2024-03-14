@@ -1,6 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function(){
+    function fetchNewsAndDisplay() {
     $.ajax({
-        url: '/get_news_data',  // Endpoint to fetch data
+        url: '/get_data_from_flask',  // Endpoint to fetch data
         method: 'GET',
         success: function(response) {
             displayNews(response);
@@ -9,8 +10,8 @@ $(document).ready(function() {
             console.error(error);
         }
     });
-
     function displayNews(newsData) {
+        console.log("inDisplay");
         var newsContainer = $('#news-container');
         newsData.forEach(function(news) {
             console.log("HEERE");
@@ -21,5 +22,6 @@ $(document).ready(function() {
             newsContainer.append(newsBox);
         });
     }
+}
+    setInterval(fetchNewsAndDisplay, 8000);
 });
-

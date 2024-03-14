@@ -113,7 +113,7 @@ public class NewsEntityController {
 
     @PostMapping("/send_to_frontEnd")
     public ResponseEntity<String> sendUrlToFront(@RequestBody NewsEntity newsEntity) throws JsonMappingException, JsonProcessingException {
-        String apiFlaskUrl = "http://localhost:5000/get_news_data";
+        String apiFlaskUrl = "http://localhost:5000/post_data_to_front";
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -128,6 +128,14 @@ public class NewsEntityController {
                 NewsEntity currentNewsEntity = optionalNewsEntity.get();
 
                 URL extractedUrl = currentNewsEntity.getUrl();
+                String title = currentNewsEntity.getTitle();
+
+                String summary = currentNewsEntity.getSummarizedContent();
+                if(currentNewsEntity.getSummarizedContent() == null)
+                    summary = "not proccessed";
+
+                jsonObject.put("title", title);
+                jsonObject.put("summary", summary);
                 jsonObject.put("url", extractedUrl);
                 
 
