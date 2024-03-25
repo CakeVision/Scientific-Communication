@@ -1,0 +1,12 @@
+Dc nu a mers scriptul:
+1. Go download python(latest stable)
+2. Dupa ce il dowladezi, adauga python la path
+	Tutorial: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+3. Ruleaza:
+	python -V
+	ar trebui sa iti arate versiunea de piton pe care o ai,
+	dc nu merge verifica din nou pasul 2
+4. Ruleaza:
+	pip install flask
+5. Ruleaza:
+	python app.py in folderul codoAndGPTFront
